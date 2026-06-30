@@ -35,7 +35,7 @@ export const navLinks = [
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/nikitayk/",
+    href: "https://www.linkedin.com/in/nikita-chaurasia-b82910288/",
   },
   {
     label: "GitHub",
@@ -47,7 +47,7 @@ export const socialLinks = [
   },
   {
     label: "GeeksforGeeks",
-    href: "https://auth.geeksforgeeks.org/user/nikitayk",
+    href: "https://www.geeksforgeeks.org/profile/nikitardfe8",
   },
 ] as const;
 
@@ -254,7 +254,16 @@ export const education = [
 ] as const;
 
 export const certifications = [
-  "AI For Everyone — DeepLearning.AI",
-  "Supervised Machine Learning (Regression and Classification) — Stanford Online",
-  "Advanced Learning Algorithms — DeepLearning.AI",
+  {
+    name: "AI For Everyone — DeepLearning.AI",
+    url: "https://www.coursera.org/account/accomplishments/verify/67JQL9VXALPE",
+  },
+  {
+    name: "Supervised Machine Learning (Regression and Classification) — Stanford Online",
+    url: "https://www.coursera.org/account/accomplishments/verify/PPLQALFXDE6Y",
+  },
+  {
+    name: "Advanced Learning Algorithms — DeepLearning.AI",
+    url: "https://www.coursera.org/account/accomplishments/verify/TUHKF2T2987L",
+  },
 ] as const;
