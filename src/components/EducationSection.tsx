@@ -48,10 +48,18 @@ export function EducationSection() {
             <ul className="space-y-3">
               {certifications.map((cert) => (
                 <li
-                  key={cert}
+                  key={cert.url}
                   className="border-b border-border pb-3 text-sm leading-relaxed text-muted last:border-0 last:pb-0"
                 >
-                  {cert}
+                  
+                    <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-accent transition-colors"
+                  >
+                    {cert.name}
+                  </a>
                 </li>
               ))}
             </ul>
