@@ -234,7 +234,7 @@ export const education = [
     degree: "B.Tech in ECAM (ECE + AI/ML)",
     school: "Netaji Subhas University of Technology",
     period: "2023 – 2027",
-    detail: "7.03 CGPA",
+    detail: "6.88 CGPA",
     primary: true,
   },
   {
