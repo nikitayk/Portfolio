@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-surface: #f5f1eb;
+  --color-elevated: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-muted: #5c5a55;
+  --color-accent: #0d9488;
+  --color-copper: #b8734a;
+  --color-border: rgba(26, 26, 26, 0.1);
+  --mesh-1: rgba(13, 148, 136, 0.18);
+  --mesh-2: rgba(184, 115, 74, 0.14);
+  --mesh-3: rgba(26, 26, 26, 0.06);
+}
+
+.dark {
+  --color-surface: #0b0c0e;
+  --color-elevated: #131519;
+  --color-ink: #eceae4;
+  --color-muted: #9a9690;
+  --color-accent: #14b8a6;
+  --color-copper: #c4845c;
+  --color-border: rgba(236, 234, 228, 0.1);
+  --mesh-1: rgba(20, 184, 166, 0.12);
+  --mesh-2: rgba(196, 132, 92, 0.1);
+  --mesh-3: rgba(236, 234, 228, 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-surface font-sans text-ink antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-pad {
+    @apply px-5 sm:px-8 lg:px-12;
+  }
+
+  .mesh-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 20%, var(--mesh-1), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 85% 75%, var(--mesh-2), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 50% 50%, var(--mesh-3), transparent 60%);
+  }
+
+  .grain-overlay {
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .dark .grain-overlay {
+    opacity: 0.06;
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+}
