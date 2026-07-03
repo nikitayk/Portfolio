@@ -152,4 +152,121 @@ export const experience = [
     ],
     liveUrl: "https://nikitayk.github.io/ADPULSE",
     githubUrl: "https://github.com/nikitayk/ADPULSE",
-  }, ]
+  },
+] as const;
+
+// -----------------------------------------------------------------------
+// Projects.tsx needs its own shape (category/name/subtitle/date/tagline/
+// highlights/metrics/stack/liveUrl/githubUrl/featured) — different from
+// `experience`, so this is a dedicated array, not an alias.
+// -----------------------------------------------------------------------
+
+export type ProjectCategory = "Applied AI" | "Security" | "Real-Time Systems";
+
+export const projects = [
+  {
+    id: "agentic-retrieval",
+    category: "Applied AI" as ProjectCategory,
+    name: "Agentic Knowledge Retrieval System",
+    subtitle: "Multi-agent RAG with sandboxed code execution",
+    date: "Jul 2026",
+    tagline:
+      "A citation-grounded RAG pipeline that routes intent, retrieves semantically, and runs its own Python safely.",
+    highlights: [
+      "Multi-agent pipeline via LangGraph with dynamic intent-based routing and semantic retrieval through ChromaDB.",
+      "Sandboxed Python execution — isolated subprocess with CPU/time limits plus a network-isolated Docker backend — with self-correcting retry loops (up to 3 attempts).",
+      "Containerized FastAPI + Chainlit app with Pydantic validation and multi-turn conversational memory, provider-agnostic across 4 LLM backends.",
+    ],
+    metrics: [
+      "100% retrieval hit-rate",
+      "95% answer faithfulness",
+      "23 passing tests",
+    ],
+    stack: ["Python", "LangGraph", "ChromaDB", "FastAPI", "Chainlit", "Docker"],
+    liveUrl: "https://alirizzv-agentic-rag.hf.space",
+    githubUrl: "https://github.com/nikitayk/AgenticRetrieval",
+    featured: true,
+  },
+  {
+    id: "sentinel",
+    category: "Security" as ProjectCategory,
+    name: "SENTINEL",
+    subtitle: "AI Prompt Security Gateway",
+    date: "Jun 2026",
+    tagline:
+      "A browser extension that catches secrets in your prompts before they ever leave the tab.",
+    highlights: [
+      "Manifest V3 Chrome extension intercepting prompts on ChatGPT, Claude, and Gemini with zero network calls in the detection path.",
+      "5 algorithms implemented from scratch (Aho-Corasick, Shannon entropy, Trie, Max-Heap, Merge-Intervals) detecting 24 secret patterns plus base64 decode-and-rescan.",
+      "React + Chart.js dashboard backed by FastAPI + JWT, with 3 sensitivity levels.",
+    ],
+    metrics: ["24 secret patterns", "104 tests", "0 network calls"],
+    stack: ["Python", "Manifest V3", "React", "Chart.js", "FastAPI", "JWT"],
+    liveUrl: "https://nikitayk.github.io/SENTINEL",
+    githubUrl: "https://github.com/nikitayk/SENTINEL",
+    featured: false,
+  },
+  {
+    id: "adpulse",
+    category: "Real-Time Systems" as ProjectCategory,
+    name: "ADPULSE",
+    subtitle: "Real-Time Demand-Side Platform",
+    date: "Jun 2026",
+    tagline:
+      "A full-stack ad-bidding engine that prices requests in under five milliseconds.",
+    highlights: [
+      "Flask-SocketIO backend with a LightGBM bid-prediction model and a Three.js 3D dashboard.",
+      "Real-time bidding algorithm with feature engineering, model training, and hyperparameter tuning.",
+      "Containerized deployment with Docker, automated CI/CD, and Prometheus/Grafana monitoring.",
+    ],
+    metrics: ["<5ms latency", "+12% CTR", "-8% CPC"],
+    stack: ["Python", "LightGBM", "Flask-SocketIO", "Three.js", "Docker"],
+    liveUrl: "https://nikitayk.github.io/ADPULSE",
+    githubUrl: "https://github.com/nikitayk/ADPULSE",
+    featured: false,
+  },
+] as const;
+
+// -----------------------------------------------------------------------
+// Education & certifications — fill in the placeholders with your real
+// details before deploying.
+// -----------------------------------------------------------------------
+
+export const education = [
+  {
+    degree: "B.Tech in ECAM (ECE + AI/ML)",
+    school: "Netaji Subhas University of Technology",
+    period: "2023 — 2027",
+    detail: "CGPA: 7.03 / 10",
+    primary: true,
+  },
+  {
+    degree: "Senior Secondary (CBSE Class XII)",
+    school: "Rani Jhansi Sarvodaya Kanya Vidhyalaya, New Delhi",
+    period: "2023",
+    detail: "83%",
+    primary: false,
+  },
+  {
+    degree: "Secondary School (CBSE Class X)",
+    school: "Rani Jhansi Sarvodaya Kanya Vidhyalaya, New Delhi",
+    period: "2021",
+    detail: "95.5%",
+    primary: false,
+  },
+] as const;
+
+export const certifications = [
+  {
+    name: "AI For Everyone — DeepLearning.AI",
+    url: "https://www.coursera.org/account/accomplishments/verify/67JQL9VXALPE",
+  },
+  {
+    name: "Supervised Machine Learning: Regression and Classification — Stanford Online",
+    url: "https://www.coursera.org/account/accomplishments/verify/PPLQALFXDE6Y",
+  },
+  {
+    name: "Advanced Learning Algorithms — DeepLearning.AI",
+    url: "https://www.coursera.org/account/accomplishments/verify/TUHKF2T2987L",
+  },
+] as const;
