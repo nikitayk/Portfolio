@@ -8,6 +8,7 @@ import { Section, SectionHeading } from "./SectionHeading";
 
 const filters: Array<"All" | ProjectCategory> = [
   "All",
+  "Applied AI",
   "Security",
   "Real-Time Systems",
 ];
@@ -24,7 +25,7 @@ export function Projects() {
       <Reveal>
         <SectionHeading
           eyebrow="Selected work"
-          title="Two production systems I designed and shipped end to end."
+          title="Three production systems I designed and shipped end to end."
         />
       </Reveal>
 

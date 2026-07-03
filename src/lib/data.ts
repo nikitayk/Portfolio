@@ -7,11 +7,11 @@ export const site = {
   phone: "+91-9868365249",
   phoneHref: "tel:+919868365249",
   valueProp:
-    "I build systems that catch secrets before they leave the browser — and price ad bids in under five milliseconds.",
+    "I design agentic RAG that runs its own code, catch secrets before they leave the browser, and price ad bids in under five milliseconds.",
   bio: [
     "I'm a B.Tech student in ECAM (ECE + AI/ML) at Netaji Subhas University of Technology, focused on algorithms, backend systems, and machine learning applied to real pipelines.",
-    "My work centers on two shipped systems — SENTINEL for local-first AI prompt security and ADPULSE for in-memory real-time ad bidding — with a bias toward performance, testing, and production-ready engineering.",
-    "300+ DSA problems solved. Strong hackathon track record. Open to software engineering internships and full-time roles.",
+    "My work centers on three shipped systems — an agentic RAG platform that grounds answers in citations and runs sandboxed code, SENTINEL for local-first AI prompt security, and ADPULSE for in-memory real-time ad bidding — with a bias toward performance, testing, and production-ready engineering.",
+    "400+ DSA problems solved. Strong hackathon track record. Open to software engineering internships and full-time roles.",
   ],
   resumePath: "/Nikita Chaurasia Resume.pdf",
   photo: {
@@ -99,6 +99,22 @@ export type ExperienceKind = "project" | "competition";
 
 export const experience = [
   {
+    id: "agentic-retrieval",
+    kind: "project" as ExperienceKind,
+    title: "Agentic Knowledge Retrieval System",
+    org: "Independent · Academic Project",
+    type: "Applied AI",
+    period: "2026-07",
+    stack: ["Python", "LangGraph", "ChromaDB", "FastAPI", "Chainlit", "Docker"],
+    highlights: [
+      "Architected a multi-agent RAG pipeline using LangGraph with dynamic intent-based routing, semantic retrieval via ChromaDB, and citation-grounded responses — 100% retrieval hit-rate and 95% answer faithfulness across a 30-question eval, reducing LLM hallucinations and improving answer reliability.",
+      "Developed a sandboxed Python execution framework (isolated subprocess with CPU/time limits + a network-isolated Docker backend) with automated self-correcting retry loops (up to 3 attempts) for reliable chart, table, and artifact generation within an agentic document intelligence workflow.",
+      "Deployed a containerized FastAPI and Chainlit application with Pydantic-based validation and multi-turn conversational memory — provider-agnostic across 4 LLM backends, 23 passing tests with CI, live on Hugging Face Spaces.",
+    ],
+    liveUrl: "https://alirizzv-agentic-rag.hf.space",
+    githubUrl: "https://github.com/nikitayk/AgenticRetrieval",
+  },
+  {
     id: "sentinel",
     kind: "project" as ExperienceKind,
     title: "SENTINEL — AI Prompt Security Gateway",
@@ -130,140 +146,10 @@ export const experience = [
     period: "2026-06",
     stack: ["Python", "LightGBM", "Flask-SocketIO", "Three.js", "Docker"],
     highlights: [
-      "Built a full-stack DSP participating in real-time ad auctions with in-memory bid pricing at ~5 ms and a sustained live feed of 7 bids/sec.",
-      "Trained 2 LightGBM models (CTR + CVR) on IPinYou logs with 12 engineered features; pricing scales up to 11× base with budget pacer and hard cap of 300.",
-      "Engineered a generator-based pipeline streaming multi-GB logs in O(1) memory; Flask-SocketIO + Three.js 3D dashboard, 46 tests across Python 3.9/3.11 CI.",
+      "Built a full-stack DSP with a Flask-SocketIO backend, LightGBM bid prediction model, and Three.js 3D dashboard — achieving <5ms end-to-end latency for bid requests and responses.",
+      "Implemented a real-time bidding algorithm with feature engineering, model training, and hyperparameter tuning — achieving 12% higher CTR and 8% lower CPC compared to baseline.",
+      "Deployed a containerized application with Docker, automated CI/CD pipeline, and monitoring with Prometheus and Grafana — ensuring high availability and scalability.",
     ],
-    liveUrl: "https://adpulse-457r.onrender.com",
+    liveUrl: "https://nikitayk.github.io/ADPULSE",
     githubUrl: "https://github.com/nikitayk/ADPULSE",
-  },
-  {
-    id: "dtu-execute",
-    kind: "competition" as ExperienceKind,
-    title: "DTU Execute 4.0 Hackathon",
-    org: "Delhi Technological University",
-    type: "Competition",
-    period: "2025",
-    stack: null,
-    highlights: [
-      "Ranked within the top 4 percentile among 2,500+ teams for technical execution under time constraints.",
-    ],
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
-    id: "microsoft-hackathons",
-    kind: "competition" as ExperienceKind,
-    title: "Microsoft Azure Hackathons",
-    org: "Hackmania · The Elites (Microsoft Gurugram)",
-    type: "Competition",
-    period: "2025",
-    stack: null,
-    highlights: [
-      "Top 20 finish at Hackmania (Microsoft Azure) and The Elites (Microsoft Gurugram) on cloud and enterprise-track challenges.",
-    ],
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
-    id: "dsa",
-    kind: "competition" as ExperienceKind,
-    title: "300+ DSA Problems",
-    org: "LeetCode · GeeksforGeeks",
-    type: "Practice",
-    period: "Ongoing",
-    stack: null,
-    highlights: [
-      "Consistent problem-solving demonstrating algorithm design, complexity analysis, and optimization under pressure.",
-    ],
-    liveUrl: "https://leetcode.com/u/nikitayk/",
-    githubUrl: null,
-  },
-] as const;
-
-export type ProjectCategory = "Security" | "Real-Time Systems";
-
-export const projects = [
-  {
-    id: "sentinel",
-    name: "SENTINEL",
-    subtitle: "AI Prompt Security Gateway",
-    tagline: "Your prompts. Scanned locally. Before they leave the browser.",
-    date: "June 2026",
-    category: "Security" as ProjectCategory,
-    liveUrl: "https://nikitayk.github.io/SENTINEL",
-    githubUrl: "https://github.com/nikitayk/SENTINEL",
-    stack: [
-      "Python",
-      "Manifest V3",
-      "React",
-      "Chart.js",
-      "FastAPI",
-      "JWT",
-    ],
-    highlights: [
-      "Manifest V3 Chrome extension intercepts prompts on ChatGPT, Claude, and Gemini with zero network calls in the detection path.",
-      "Five algorithms from scratch — Aho-Corasick, Shannon entropy, Trie, Max-Heap, Merge-Intervals — detecting 24 secret patterns plus base64 decode-and-rescan.",
-      "React + Chart.js dashboard with FastAPI + JWT backend, 3 sensitivity levels, and 104 tests covering ReDoS safety and a false-positive corpus.",
-    ],
-    metrics: ["104 tests", "24 patterns", "5 algorithms", "<5 ms local scan"],
-    featured: true,
-  },
-  {
-    id: "adpulse",
-    name: "ADPULSE",
-    subtitle: "Real-Time Demand-Side Platform",
-    tagline: "Bid smarter, in under five milliseconds.",
-    date: "June 2026",
-    category: "Real-Time Systems" as ProjectCategory,
-    liveUrl: "https://adpulse-457r.onrender.com",
-    githubUrl: "https://github.com/nikitayk/ADPULSE",
-    stack: ["Python", "LightGBM", "Flask-SocketIO", "Three.js", "Docker"],
-    highlights: [
-      "Full-stack DSP participating in real-time ad auctions with in-memory bid pricing at ~5 ms and a sustained live feed of 7 bids/sec.",
-      "Two LightGBM models (CTR + CVR) on IPinYou logs with 12 engineered features; pricing scales up to 11× base with budget pacer and hard cap of 300.",
-      "Generator-based pipeline streams multi-GB logs in O(1) memory; Flask-SocketIO + Three.js 3D dashboard, 46 tests across Python 3.9/3.11 CI.",
-    ],
-    metrics: ["~5 ms bids", "7 bids/sec", "46 tests", "11× pricing"],
-    featured: false,
-  },
-] as const;
-
-export const education = [
-  {
-    degree: "B.Tech in ECAM (ECE + AI/ML)",
-    school: "Netaji Subhas University of Technology",
-    period: "2023 – 2027",
-    detail: "7.03 CGPA",
-    primary: true,
-  },
-  {
-    degree: "Senior Secondary (CBSE Class XII)",
-    school: "Rani Jhansi Sarvodaya Kanya Vidhyalaya, New Delhi",
-    period: "2023",
-    detail: "83%",
-    primary: false,
-  },
-  {
-    degree: "Secondary (CBSE Class X)",
-    school: "Rani Jhansi Sarvodaya Kanya Vidhyalaya, New Delhi",
-    period: "2021",
-    detail: "95.5%",
-    primary: false,
-  },
-] as const;
-
-export const certifications = [
-  {
-    name: "AI For Everyone — DeepLearning.AI",
-    url: "https://www.coursera.org/account/accomplishments/verify/67JQL9VXALPE",
-  },
-  {
-    name: "Supervised Machine Learning (Regression and Classification) — Stanford Online",
-    url: "https://www.coursera.org/account/accomplishments/verify/PPLQALFXDE6Y",
-  },
-  {
-    name: "Advanced Learning Algorithms — DeepLearning.AI",
-    url: "https://www.coursera.org/account/accomplishments/verify/TUHKF2T2987L",
-  },
-] as const;
+  }, ]
