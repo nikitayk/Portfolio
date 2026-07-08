@@ -21,7 +21,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Built, shipped, and tested — end to end."
-          description="No corporate internships yet. These are the systems and competitions that define how I work."
+          description="Projects shipped end to end, leadership on the ground, and the competitions that shaped how I work."
         />
       </Reveal>
 
