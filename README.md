@@ -4,7 +4,6 @@
 
 A fast, accessible, fully static personal portfolio showcasing systems engineering work in **agentic AI**, **AI security**, and **real-time ML**.
 
-[![Live](https://img.shields.io/badge/Live-nikita-chaurasia-portfolio.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://nikita-chaurasia-portfolio.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
@@ -14,7 +13,7 @@ A fast, accessible, fully static personal portfolio showcasing systems engineeri
 
 </div>
 
----## Overview
+## Overview
 
 This is the source for my personal portfolio — a single-page, statically exported Next.js application with a light/dark theme, scroll-reveal animations, and a content layer driven entirely from a single typed data file. It is built to load instantly, rank well, and stay trivially easy to update.
 
