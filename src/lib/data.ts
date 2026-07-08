@@ -97,10 +97,23 @@ export const skillGroups = [
 
 export type ExperienceKind = "project" | "competition";
 
-export const experience = [
+export interface ExperienceItem {
+  id: string;
+  kind: ExperienceKind;
+  title: string;
+  org: string;
+  type?: string;
+  period: string;
+  stack?: string[];
+  highlights: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+export const experience: ExperienceItem[] = [
   {
     id: "agentic-retrieval",
-    kind: "project" as ExperienceKind,
+    kind: "project",
     title: "Agentic Knowledge Retrieval System",
     org: "Independent · Academic Project",
     type: "Applied AI",
@@ -116,19 +129,12 @@ export const experience = [
   },
   {
     id: "sentinel",
-    kind: "project" as ExperienceKind,
+    kind: "project",
     title: "SENTINEL — AI Prompt Security Gateway",
     org: "Independent · Academic Project",
     type: "Security Engineering",
     period: "2026-06",
-    stack: [
-      "Python",
-      "Manifest V3",
-      "React",
-      "Chart.js",
-      "FastAPI",
-      "JWT",
-    ],
+    stack: ["Python", "Manifest V3", "React", "Chart.js", "FastAPI", "JWT"],
     highlights: [
       "Built a Manifest V3 Chrome extension that intercepts prompts on ChatGPT, Claude, and Gemini — scanning for API keys, credentials, and PII with zero network calls in the detection path.",
       "Implemented 5 algorithms from scratch (Aho-Corasick, Shannon entropy, Trie, Max-Heap, Merge-Intervals) detecting 24 secret patterns plus base64 decode-and-rescan.",
@@ -139,7 +145,7 @@ export const experience = [
   },
   {
     id: "adpulse",
-    kind: "project" as ExperienceKind,
+    kind: "project",
     title: "ADPULSE — Real-Time Demand-Side Platform",
     org: "Independent · Academic Project",
     type: "Real-Time Systems",
@@ -153,8 +159,7 @@ export const experience = [
     liveUrl: "https://nikitayk.github.io/ADPULSE",
     githubUrl: "https://github.com/nikitayk/ADPULSE",
   },
-] as const;
-
+];
 // -----------------------------------------------------------------------
 // Projects.tsx needs its own shape (category/name/subtitle/date/tagline/
 // highlights/metrics/stack/liveUrl/githubUrl/featured) — different from
